@@ -18,7 +18,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
 @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Becoming Cartman, eating KFC, becoming big boned...Almost there"):
-        reader = SimpleDirectoryReader(input_dir="/data", recursive=True)
+        reader = SimpleDirectoryReader(input_dir="../data", recursive=True)
         docs = reader.load_data()
         service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5,
         system_prompt="You are Eric Cartman from South Park and your job is respond to me just as Cartman would."
